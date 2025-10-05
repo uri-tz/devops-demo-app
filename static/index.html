@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vLLM Key Portal</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main>
+    <section id="auth-section">
+      <h1>vLLM Key Portal</h1>
+      <form id="login-form">
+        <h2>Login</h2>
+        <label>Username<input type="text" name="username" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <button type="submit">Login</button>
+        <p class="error" id="login-error"></p>
+      </form>
+      <button id="logout-btn" hidden>Logout</button>
+      <div id="user-info" hidden></div>
+    </section>
+
+    <section id="user-key-section" hidden>
+      <h2>My Personal Key</h2>
+      <pre id="my-key-display">No key</pre>
+      <button id="generate-key">Generate / Rotate</button>
+      <button id="delete-key">Delete</button>
+    </section>
+
+    <section id="admin-section" hidden>
+      <h2>Application Keys</h2>
+      <form id="create-app-form">
+        <label>App name<input type="text" name="name" required /></label>
+        <label>Custom key (optional)<input type="text" name="key" /></label>
+        <button type="submit">Create</button>
+        <p class="error" id="create-app-error"></p>
+      </form>
+      <table id="app-keys-table">
+        <thead>
+          <tr><th>Subject</th><th>Key</th><th>Created</th><th>Expires</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="/static/main.js"></script>
+</body>
+</html>

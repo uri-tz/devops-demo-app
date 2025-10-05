@@ -1,0 +1,15 @@
+[Unit]
+Description=vLLM Key Portal
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/vllm-keyportal.env
+WorkingDirectory=/opt/vllm-keyportal
+ExecStart=/usr/bin/env uvicorn app.main:app --host 0.0.0.0 --port 8443
+Restart=on-failure
+User=vllm
+Group=vllm
+
+[Install]
+WantedBy=multi-user.target
