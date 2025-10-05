@@ -1,0 +1,13 @@
+LDAP_URI = "ldaps://ad.example.com"
+LDAP_BIND_DN = "CN=svc,OU=Service Accounts,DC=example,DC=com"
+LDAP_BIND_PASSWORD = "change-me"
+LDAP_BASE_DN = "DC=example,DC=com"
+LDAP_MAIL_ATTR = "mail"
+LDAP_DISPLAY_ATTR = "displayName"
+ADMIN_USERS = ["uri.tzabari", "alex.grishankov"]
+# ADMIN_GROUP_DN = "CN=Platform Admins,OU=Groups,DC=example,DC=com"
+KEYS_JSON_PATH = "/etc/vllm/keys.json"
+KEY_DEFAULT_TTL_DAYS = 30
+SESSION_SECRET = "replace-with-random-secret"
+HTTPS_ONLY = true
+AUDIT_LOG_PATH = "/var/log/vllm-keyportal/audit.log"
